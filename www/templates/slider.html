@@ -1,0 +1,31 @@
+<!--    <ion-header-bar class="bar-stable padding ">
+      <img src="img/logo-nav.png" alt="">
+    </ion-header-bar> -->
+<ion-view hide-nav-bar="true">
+  <ion-content>
+  <ion-slides  options="options" slider="data.slider">
+  <ion-slide-page>
+    <div class="box blue"><h1>BLUE</h1></div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <div class="box yellow"><h1>YELLOW</h1></div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <div class="box pink"><h1>PINK</h1></div>
+  </ion-slide-page>
+</ion-slides>
+
+
+  </ion-content>
+</ion-view>
+<script>
+  $scope.options = {
+  loop: true,
+  effect: fade,
+  speed: 500,
+}
+$scope.data = {};
+$scope.$watch('data.slider', function(nv, ov) {
+  $scope.slider = $scope.data.slider;
+})
+</script>

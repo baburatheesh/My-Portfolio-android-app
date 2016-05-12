@@ -1,0 +1,17 @@
+<ion-view hide-nav-bar="true">
+  <ion-content class="has-tabs-top" ng-controller="WorksCtrl">
+ <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+  </ion-refresher>
+
+<ion-list class="list">
+	<ion-item class="item-text-wrap item item-thumbnail-left" ng-repeat="post in posts" href="#/tab/works/{{post.ID}}">
+	 <img ng-src="{{post.featured_image.guid}}" alt="">
+      <h2>{{ post.title | limitTo: 30 }} .....</h2>
+      <p ng-bind-html="post.excerpt | limitTo: 80"></p>
+	</ion-item>
+</ion-list>
+  
+  </ion-content>
+</ion-view>
